@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YMS Client Demo</title>
+</head>
+<body>
+    <h1>YMS Client Demo List</h1>
+    <dl>  
+        <dt><a href="https://github.com/fengweiyu/webrtc_with_libnice_and_srtp">WebRTC</a></dt>  
+        <dd>
+            <li><a href="https://yuweifeng.top:9223/index.html">预览和语音对讲client demo</a></li>
+            <li><a href="https://yuweifeng.top:9223/VideoCall.html">视频对讲client demo</a></li>
+        </dd>  
+        <dt><a href="https://github.com/fengweiyu/HLS">HLS</a></dt>  
+        <dd>
+            <li><a href="https://yuweifeng.top:9211/file/H264AAC.flv/testFMP4.m3u8">HLS-FMP4 h264 client demo</a></li>
+            <li><a href="https://yuweifeng.top:9211/file/H265AAC.flv/testFMP4.m3u8">HLS-FMP4 h265 client demo</a></li>
+            <a href="https://yuweifeng.top:9221/index.html">hls.js</a>
+        </dd> 
+        <dt><a href="https://github.com/fengweiyu/RTMP">RTMP</a></dt>   
+        <dd>
+            <li>RTMP client play demo</li>
+            <textarea name="" id="RTMPUrlInput" cols="80" rows="1"></textarea>
+            <li>enhanced RTMP client play demo</li>
+            <textarea name="" id="enhancedRTMPUrlInput" cols="80" rows="1"></textarea>
+            <li>RTMP client push demo</li>
+            <textarea name="" id="RTMPPushUrlInput" cols="80" rows="1"></textarea>
+            <br><a href="https://yuweifeng.top:9257/rtmp">RTMP服务接收数据</a>
+        </dd>
+        <dt><a href="https://github.com/fengweiyu/HttpFlv">HttpFlv</a></dt> 
+        <dd>
+            <li>HttpFlv client demo</li>
+            <textarea name="" id="FLVUrlInput" cols="80" rows="1"></textarea>
+            <li>enhanced HttpFlv client demo</li>
+            <textarea name="" id="enhancedFLVUrlInput" cols="80" rows="1"></textarea>
+            <br><a href="https://yuweifeng.top:9225/index.html">flv.js</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://yuweifeng.top:9225/flvH265.html">flv-h265.js</a>
+        </dd>
+        <dt><a href="https://github.com/fengweiyu/RTSP">RTSP</a></dt>   
+        <dd>
+            <li><a href="https://yuweifeng.top:9257/rtsp">rtp over udp client demo</a></li>
+            <textarea name="" id="udpRTSPUrlInput" cols="80" rows="1"></textarea>
+            <li>rtp over tcp client demo</li>
+            <textarea name="" id="tcpRTSPUrlInput" cols="80" rows="1"></textarea>
+        </dd>
+        
+        <dt><a href="https://github.com/fengweiyu/MediaCodec">MediaCodec</a></dt> 
+        <dd>
+            <li><a href="https://github.com/fengweiyu/MediaCodec/releases/tag/v1.0.1">使用说明</a></li>
+            <textarea name="" id="MediaCodecInput" cols="80" rows="1"></textarea>
+            <li><a href="https://yuweifeng.top:9257/MediaCodec">文件下载</a></li>
+        </dd>
+        <dt>工具下载</dt>  
+        <dd>
+            <li><a href="https://yuweifeng.top:9257/soft/ffplay.exe" download>ffplay.exe</a></li>
+            <li><a href="https://yuweifeng.top:9257/soft/ffmpeg.exe" download>ffmpeg.exe</a></li>
+        </dd>
+    </dl> 
+    <script>  
+        document.getElementById('RTMPUrlInput').value = 'ffplay -i rtmp://yuweifeng.top:9216/play/h264aac.flv';  
+        document.getElementById('enhancedRTMPUrlInput').value = 'ffplay -i rtmp://yuweifeng.top:9216/play_enhanced/h265aac.flv'; 
+        document.getElementById('RTMPPushUrlInput').value = 'ffmpeg -re -i h264aac.flv -c copy -f flv rtmp://yuweifeng.top:9216/push/h264aac';  
+        document.getElementById('FLVUrlInput').value = 'ffplay -i https://yuweifeng.top:9215/file/H264AAC.flv';  
+        document.getElementById('enhancedFLVUrlInput').value = 'ffplay -i https://yuweifeng.top:9215/file_enhanced/H265AAC.flv'; 
+        document.getElementById('udpRTSPUrlInput').value = 'ffplay -i rtsp://yuweifeng.top:9218/1 (only lan ,to do wan(recv udp to get wan ip and port))';  
+        document.getElementById('tcpRTSPUrlInput').value = 'to do'; 
+        document.getElementById('MediaCodecInput').value = 'download release/linux.tar.gz,then run proc eg:./MediaTranscode demo_g2a.json';
+    </script>
+</body>
+</html>
